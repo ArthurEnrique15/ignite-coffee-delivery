@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 6.5rem;
 
-  padding: 2rem 10rem;
+  padding: 2rem 0;
 
   div {
     display: flex;
