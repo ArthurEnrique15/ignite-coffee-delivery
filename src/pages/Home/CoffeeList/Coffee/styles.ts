@@ -111,7 +111,6 @@ export const CoffeeContainer = styled.div`
 
     .productCount {
       background-color: ${({ theme }) => theme['base-button']};
-      color: ${({ theme }) => theme.purple};
 
       border-radius: 6px;
 
@@ -127,6 +126,16 @@ export const CoffeeContainer = styled.div`
         color: ${({ theme }) => theme['base-title']};
         padding: 0.25rem;
       }
+
+      svg {
+        transition: 0.2s;
+        color: ${({ theme }) => theme.purple};
+      }
+
+      svg:hover {
+        cursor: pointer;
+        color: ${({ theme }) => theme['purple-dark']};
+      }
     }
 
     button {
@@ -138,6 +147,13 @@ export const CoffeeContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      transition: 0.2s;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: ${({ theme }) => theme.purple};
     }
   }
 `
