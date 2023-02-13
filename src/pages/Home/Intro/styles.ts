@@ -24,7 +24,7 @@ export const IntroContainer = styled.div`
 
       font-family: 'Baloo 2';
       font-weight: 800;
-      font-size: 48px;
+      font-size: 3rem;
 
       margin-bottom: 1rem;
     }
@@ -32,7 +32,7 @@ export const IntroContainer = styled.div`
     span {
       color: ${({ theme }) => theme['base-subtitle']};
 
-      font-size: 20px;
+      font-size: 1.25rem;
     }
   }
 
