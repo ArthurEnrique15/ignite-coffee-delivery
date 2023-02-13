@@ -39,8 +39,6 @@ export const CoffeeContainer = styled.div`
       background-color: ${({ theme }) => theme['yellow-light']};
       border-radius: 100px;
 
-      font-family: 'Roboto';
-      font-style: normal;
       font-weight: 700;
       font-size: 0.625rem;
 
@@ -52,22 +50,16 @@ export const CoffeeContainer = styled.div`
     color: ${({ theme }) => theme['base-subtitle']};
 
     font-family: 'Baloo 2';
-    font-style: normal;
+
     font-weight: 700;
     font-size: 1.25rem;
-    line-height: 130%;
 
     margin-bottom: 0.5rem;
   }
 
   .description {
     color: ${({ theme }) => theme['base-label']};
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
     font-size: 0.875rem;
-    line-height: 130%;
   }
 
   footer {
@@ -93,19 +85,13 @@ export const CoffeeContainer = styled.div`
       }
 
       span:first-child {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
         font-size: 0.875rem;
-        line-height: 130%;
       }
 
       span:last-child {
         font-family: 'Baloo 2';
-        font-style: normal;
         font-weight: 800;
         font-size: 1.5rem;
-        line-height: 130%;
       }
     }
 

@@ -25,7 +25,6 @@ export const IntroContainer = styled.div`
       font-family: 'Baloo 2';
       font-weight: 800;
       font-size: 48px;
-      line-height: 130%;
 
       margin-bottom: 1rem;
     }
@@ -34,7 +33,6 @@ export const IntroContainer = styled.div`
       color: ${({ theme }) => theme['base-subtitle']};
 
       font-size: 20px;
-      line-height: 130%;
     }
   }
 
@@ -54,11 +52,6 @@ export const IntroContainer = styled.div`
 
       height: 2rem;
 
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 130%;
       color: ${({ theme }) => theme['base-text']};
 
       button {
