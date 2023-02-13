@@ -1,0 +1,143 @@
+import styled from 'styled-components'
+
+export const CoffeeContainer = styled.div`
+  width: 16rem;
+  height: 19.375rem;
+
+  background-color: ${({ theme }) => theme['base-card']};
+
+  border-radius: 6px 36px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* justify-content: center; */
+
+  padding: 0 1.25rem;
+
+  img {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-top: calc(0px - 1.25rem);
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+
+    gap: 0.25rem;
+
+    span {
+      text-transform: uppercase;
+      color: ${({ theme }) => theme['yellow-dark']};
+      background-color: ${({ theme }) => theme['yellow-light']};
+      border-radius: 100px;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.625rem;
+
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
+  .title {
+    color: ${({ theme }) => theme['base-subtitle']};
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 130%;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    color: ${({ theme }) => theme['base-label']};
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 130%;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 2.0625rem;
+
+    gap: 0.5rem;
+
+    .price {
+      /* width: 5.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; */
+
+      margin-right: 1.5rem;
+
+      span {
+        color: ${({ theme }) => theme['base-text']};
+      }
+
+      span:first-child {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 130%;
+      }
+
+      span:last-child {
+        font-family: 'Baloo 2';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        line-height: 130%;
+      }
+    }
+
+    .productCount {
+      background-color: ${({ theme }) => theme['base-button']};
+      color: ${({ theme }) => theme.purple};
+
+      border-radius: 6px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 0.25rem;
+      padding: 0.5rem;
+
+      span {
+        color: ${({ theme }) => theme['base-title']};
+        padding: 0.25rem;
+      }
+    }
+
+    button {
+      background-color: ${({ theme }) => theme['purple-dark']};
+      border-radius: 6px;
+      width: 2.375rem;
+      height: 2.375rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+`
