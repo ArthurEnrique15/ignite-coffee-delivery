@@ -5,4 +5,6 @@ export const CheckoutContainer = styled.div`
   flex-direction: row;
 
   gap: 2rem;
+
+  margin-top: 2.5rem;
 `
