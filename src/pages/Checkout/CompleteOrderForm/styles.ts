@@ -74,18 +74,34 @@ export const CompleteOrderFormContainer = styled.div`
   }
 
   input {
+    width: 12.5rem;
     height: 2.625rem;
     color: ${(props) => props.theme['base-text']};
 
     background-color: ${(props) => props.theme['base-input']};
 
     border: 1px solid ${(props) => props.theme['base-button']};
+    border-radius: 4px;
 
     padding: 0.75rem;
+
+    transition: 0.1s;
   }
 
   input::placeholder {
     color: ${(props) => props.theme['base-label']};
     font-size: 0.875rem;
+  }
+
+  input:focus {
+    border-color: ${(props) => props.theme['yellow-dark']};
+  }
+
+  .fullInput {
+    width: 100%;
+  }
+
+  .federalUnitInput {
+    width: 3.75rem;
   }
 `
