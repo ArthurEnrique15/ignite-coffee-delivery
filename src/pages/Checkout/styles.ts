@@ -7,4 +7,5 @@ export const CheckoutContainer = styled.div`
   gap: 2rem;
 
   margin-top: 2.5rem;
+  width: 100%;
 `
