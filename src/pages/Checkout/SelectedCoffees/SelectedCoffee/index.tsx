@@ -1,6 +1,6 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 
-import coffeeImg from '../../../../assets/coffeeTypes/Type=Americano.png'
+import coffeeImg from '../../../../assets/coffeeTypes/expresso-americano.png'
 import { SelectedCoffeeContainer } from './styles'
 
 export function SelectedCoffee() {
