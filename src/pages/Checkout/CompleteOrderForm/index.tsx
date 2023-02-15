@@ -15,7 +15,7 @@ export function CompleteOrderForm() {
       </div>
 
       <form>
-        <div className="formPanel">
+        <div className="formPanel addressPanel">
           <div className="formHeader">
             <MapPinLine className="addressIcon" size={22} />
 
@@ -65,22 +65,22 @@ export function CompleteOrderForm() {
           </div>
 
           <div className="paymentOptions">
-            <label>
-              <input type="radio" name="radio" />
-              <CreditCard />
-              Cartão de crédito
+            <input id="creditCard" type="radio" name="paymentOption" />
+            <label htmlFor="creditCard" className="paymentOption">
+              <CreditCard size={16} />
+              <span>Cartão de crédito</span>
             </label>
 
-            <label>
-              <input type="radio" name="radio" />
-              <Bank />
-              Cartão de débito
+            <input id="debitCard" type="radio" name="paymentOption" />
+            <label htmlFor="debitCard" className="paymentOption">
+              <Bank size={16} />
+              <span>Cartão de débito</span>
             </label>
 
-            <label>
-              <input type="radio" name="radio" />
-              <Money />
-              Dinheiro
+            <input id="money" type="radio" name="paymentOption" />
+            <label htmlFor="money" className="paymentOption">
+              <Money size={16} />
+              <span>Dinheiro</span>
             </label>
           </div>
         </div>

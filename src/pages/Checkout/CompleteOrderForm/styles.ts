@@ -68,12 +68,12 @@ export const CompleteOrderFormContainer = styled.div`
     gap: 1rem;
   }
 
-  p {
+  .inputs p {
     display: flex;
     gap: 0.75rem;
   }
 
-  input {
+  .inputs input {
     width: 12.5rem;
     height: 2.625rem;
     color: ${(props) => props.theme['base-text']};
@@ -88,20 +88,65 @@ export const CompleteOrderFormContainer = styled.div`
     transition: 0.1s;
   }
 
-  input::placeholder {
+  .inputs input::placeholder {
     color: ${(props) => props.theme['base-label']};
     font-size: 0.875rem;
   }
 
-  input:focus {
+  .inputs input:focus {
     border-color: ${(props) => props.theme['yellow-dark']};
   }
 
-  .fullInput {
+  .inputs .fullInput {
     width: 100%;
   }
 
-  .federalUnitInput {
+  .inputs .federalUnitInput {
     width: 3.75rem;
+  }
+
+  .paymentOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 0.75rem;
+  }
+
+  .paymentOptions label {
+    width: 100%;
+    height: 3.1875rem;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+
+    padding: 1rem;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: ${(props) => props.theme['base-button']};
+    transition: 0.1s;
+  }
+
+  .paymentOptions label svg {
+    color: ${(props) => props.theme.purple};
+  }
+
+  .paymentOptions label span {
+    font-size: 0.75rem;
+    line-height: 160%;
+    color: ${(props) => props.theme['base-text']};
+
+    text-transform: uppercase;
+  }
+
+  .paymentOptions input[type='radio'] {
+    display: none;
+  }
+
+  .paymentOptions input[type='radio']:checked + label {
+    background-color: ${(props) => props.theme['purple-light']};
+    border-color: ${(props) => props.theme.purple};
   }
 `
