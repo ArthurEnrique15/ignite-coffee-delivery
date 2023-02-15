@@ -1,3 +1,4 @@
+import { SelectedCoffee } from './SelectedCoffee'
 import { SelectedCoffeesContainer } from './styles'
 
 const coffeesArray = [1, 2, 3]
@@ -11,7 +12,7 @@ export function SelectedCoffees() {
 
       <div className="panel">
         {coffeesArray.map((coffee) => (
-          <h1>Coffee</h1>
+          <SelectedCoffee />
         ))}
 
         <footer>
