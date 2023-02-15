@@ -66,19 +66,19 @@ export function CompleteOrderForm() {
 
           <div className="paymentOptions">
             <input id="creditCard" type="radio" name="paymentOption" />
-            <label htmlFor="creditCard" className="paymentOption">
+            <label htmlFor="creditCard">
               <CreditCard size={16} />
               <span>Cartão de crédito</span>
             </label>
 
             <input id="debitCard" type="radio" name="paymentOption" />
-            <label htmlFor="debitCard" className="paymentOption">
+            <label htmlFor="debitCard">
               <Bank size={16} />
               <span>Cartão de débito</span>
             </label>
 
             <input id="money" type="radio" name="paymentOption" />
-            <label htmlFor="money" className="paymentOption">
+            <label htmlFor="money">
               <Money size={16} />
               <span>Dinheiro</span>
             </label>

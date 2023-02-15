@@ -141,6 +141,15 @@ export const CompleteOrderFormContainer = styled.div`
     text-transform: uppercase;
   }
 
+  .paymentOptions label:hover {
+    cursor: pointer;
+    background-color: ${(props) => props.theme['base-hover']};
+  }
+
+  .paymentOptions label:hover span {
+    color: ${(props) => props.theme['base-subtitle']};
+  }
+
   .paymentOptions input[type='radio'] {
     display: none;
   }
