@@ -3,6 +3,7 @@ import { CoffeeContainer } from './styles'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { ShopCartContext } from '../../../../contexts/ShopCartContext'
+import { formatPrice } from '../../../../utils/format-price'
 
 interface CoffeeProps {
   id: number
@@ -58,8 +59,7 @@ export function Coffee(props: CoffeeProps) {
       <footer>
         <div className="price">
           <span>R$ </span>
-          {/* TODO format price to be in the format 0,00 */}
-          <span>{price}</span>
+          <span>{formatPrice(price)}</span>
         </div>
 
         <div className="productCount">

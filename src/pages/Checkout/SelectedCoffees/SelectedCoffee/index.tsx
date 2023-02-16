@@ -1,6 +1,7 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 
 import { CartItem } from '../../../../contexts/ShopCartContext'
+import { formatPrice } from '../../../../utils/format-price'
 import { SelectedCoffeeContainer } from './styles'
 
 interface SelectedCoffeeProps {
@@ -35,7 +36,7 @@ export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
       </div>
 
       <div className="price">
-        <span>R$ {price}</span>
+        <span>R$ {formatPrice(price * amount)}</span>
       </div>
     </SelectedCoffeeContainer>
   )
