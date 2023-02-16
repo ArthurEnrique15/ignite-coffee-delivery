@@ -12,16 +12,16 @@ interface SelectedCoffeeProps {
 export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
   const { id, name, amount, price, image } = coffee
 
-  const { addCoffeeInCart, removeItemFromCart, removeSingleCoffeeFromCart } =
+  const { addItemsInCart, removeItemFromCart, decreaseItemAmountInCart } =
     useContext(ShopCartContext)
 
   const handleIncreaseAmount = () => {
-    addCoffeeInCart({ ...coffee, amount: 1 })
+    addItemsInCart({ ...coffee, amount: 1 })
   }
 
   const handleDecreaseAmount = () => {
     if (amount > 0) {
-      removeSingleCoffeeFromCart(id)
+      decreaseItemAmountInCart(id)
     }
   }
 

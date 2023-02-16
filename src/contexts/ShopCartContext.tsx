@@ -5,9 +5,9 @@ export type CartItem = Coffee & { amount: number }
 
 interface ShopCartContextType {
   shopCart: CartItem[]
-  addCoffeeInCart: (item: CartItem) => void
+  addItemsInCart: (item: CartItem) => void
   removeItemFromCart: (id: number) => void
-  removeSingleCoffeeFromCart: (id: number) => void
+  decreaseItemAmountInCart: (id: number) => void
 }
 
 export const ShopCartContext = createContext({} as ShopCartContextType)
@@ -53,7 +53,7 @@ export function ShopCartContextProvider({
 
   console.log(shopCart)
 
-  const addCoffeeInCart = (item: CartItem) => {
+  const addItemsInCart = (item: CartItem) => {
     const itemAlreadyExistsInCart = shopCart.find(
       (shopCartCartItem) => shopCartCartItem.id === item.id,
     )
@@ -84,7 +84,7 @@ export function ShopCartContextProvider({
     })
   }
 
-  const removeSingleCoffeeFromCart = (id: number) => {
+  const decreaseItemAmountInCart = (id: number) => {
     setShopCart((state) => {
       const item = state.find((item) => item.id === id)
 
@@ -107,9 +107,9 @@ export function ShopCartContextProvider({
     <ShopCartContext.Provider
       value={{
         shopCart,
-        addCoffeeInCart,
+        addItemsInCart,
         removeItemFromCart,
-        removeSingleCoffeeFromCart,
+        decreaseItemAmountInCart,
       }}
     >
       {children}

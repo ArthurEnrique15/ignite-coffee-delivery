@@ -17,7 +17,7 @@ interface CoffeeProps {
 export function Coffee(props: CoffeeProps) {
   const { id, name, description, tags, price, image } = props
 
-  const { addCoffeeInCart } = useContext(ShopCartContext)
+  const { addItemsInCart } = useContext(ShopCartContext)
 
   const [amount, setAmount] = useState(0)
 
@@ -31,9 +31,9 @@ export function Coffee(props: CoffeeProps) {
     }
   }
 
-  const handleAddCoffeeInCart = () => {
+  const handleAddItemsInCart = () => {
     if (amount > 0) {
-      addCoffeeInCart({
+      addItemsInCart({
         ...props,
         amount,
       })
@@ -75,7 +75,7 @@ export function Coffee(props: CoffeeProps) {
           </button>
         </div>
 
-        <button className="shopCart" onClick={handleAddCoffeeInCart}>
+        <button className="shopCart" onClick={handleAddItemsInCart}>
           <ShoppingCart size={22} weight="fill" color="white" />
         </button>
       </footer>
