@@ -37,6 +37,7 @@ export function Coffee(props: CoffeeProps) {
         ...props,
         amount,
       })
+      setAmount(0)
     }
   }
 
