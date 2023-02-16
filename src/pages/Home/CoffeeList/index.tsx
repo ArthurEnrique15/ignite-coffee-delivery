@@ -10,6 +10,7 @@ export function CoffeeList() {
         {AVAILABLE_COFFEES.map((coffee) => (
           <Coffee
             key={coffee.id}
+            id={coffee.id}
             name={coffee.name}
             description={coffee.description}
             tags={coffee.tags}

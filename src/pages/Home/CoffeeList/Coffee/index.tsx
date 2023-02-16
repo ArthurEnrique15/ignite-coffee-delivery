@@ -1,9 +1,11 @@
 import { CoffeeContainer } from './styles'
 
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ShopCartContext } from '../../../../contexts/ShopCartContext'
 
 interface CoffeeProps {
+  id: number
   name: string
   description: string
   tags: string[]
@@ -11,7 +13,11 @@ interface CoffeeProps {
   image: string
 }
 
-export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
+export function Coffee(props: CoffeeProps) {
+  const { id, name, description, tags, price, image } = props
+
+  const { addCoffeeInCart } = useContext(ShopCartContext)
+
   const [amount, setAmount] = useState(0)
 
   const handleIncreaseAmount = () => {
@@ -21,6 +27,15 @@ export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
   const handleDecreaseAmount = () => {
     if (amount > 0) {
       setAmount(amount - 1)
+    }
+  }
+
+  const handleAddCoffeeInCart = () => {
+    if (amount > 0) {
+      addCoffeeInCart({
+        ...props,
+        amount,
+      })
     }
   }
 
@@ -43,6 +58,7 @@ export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
       <footer>
         <div className="price">
           <span>R$ </span>
+          {/* TODO format price to be in the format 0,00 */}
           <span>{price}</span>
         </div>
 
@@ -58,7 +74,7 @@ export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
           </button>
         </div>
 
-        <button className="shopCart">
+        <button className="shopCart" onClick={handleAddCoffeeInCart}>
           <ShoppingCart size={22} weight="fill" color="white" />
         </button>
       </footer>
