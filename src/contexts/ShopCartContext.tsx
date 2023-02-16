@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useState } from 'react'
 import { Coffee } from '../constants/coffees'
 
-type Item = Coffee & { amount: number }
+export type CartItem = Coffee & { amount: number }
 
 interface ShopCartContextType {
-  shopCart: Item[]
-  addCoffeeInCart: (item: Item) => void
+  shopCart: CartItem[]
+  addCoffeeInCart: (item: CartItem) => void
 }
 
 export const ShopCartContext = createContext({} as ShopCartContextType)
@@ -17,26 +17,26 @@ interface ShopCartContextProviderProps {
 export function ShopCartContextProvider({
   children,
 }: ShopCartContextProviderProps) {
-  const [shopCart, setShopCart] = useState<Item[]>([])
+  const [shopCart, setShopCart] = useState<CartItem[]>([])
 
   console.log(shopCart)
 
-  const addCoffeeInCart = (item: Item) => {
+  const addCoffeeInCart = (item: CartItem) => {
     const itemAlreadyExistsInCart = shopCart.find(
-      (shopCartItem) => shopCartItem.id === item.id,
+      (shopCartCartItem) => shopCartCartItem.id === item.id,
     )
 
     if (itemAlreadyExistsInCart) {
       setShopCart((state) => {
-        return state.map((shopCartItem) => {
-          if (shopCartItem.id === item.id) {
+        return state.map((shopCartCartItem) => {
+          if (shopCartCartItem.id === item.id) {
             return {
-              ...shopCartItem,
-              amount: shopCartItem.amount + item.amount,
+              ...shopCartCartItem,
+              amount: shopCartCartItem.amount + item.amount,
             }
           }
 
-          return shopCartItem
+          return shopCartCartItem
         })
       })
     } else {
