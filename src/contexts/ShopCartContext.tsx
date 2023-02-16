@@ -6,6 +6,7 @@ export type CartItem = Coffee & { amount: number }
 interface ShopCartContextType {
   shopCart: CartItem[]
   addCoffeeInCart: (item: CartItem) => void
+  removeItemFromCart: (id: number) => void
 }
 
 export const ShopCartContext = createContext({} as ShopCartContextType)
@@ -46,8 +47,16 @@ export function ShopCartContextProvider({
     }
   }
 
+  const removeItemFromCart = (id: number) => {
+    setShopCart((state) => {
+      return state.filter((item) => item.id !== id)
+    })
+  }
+
   return (
-    <ShopCartContext.Provider value={{ shopCart, addCoffeeInCart }}>
+    <ShopCartContext.Provider
+      value={{ shopCart, addCoffeeInCart, removeItemFromCart }}
+    >
       {children}
     </ShopCartContext.Provider>
   )

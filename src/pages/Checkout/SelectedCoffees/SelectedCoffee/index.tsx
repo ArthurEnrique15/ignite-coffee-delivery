@@ -1,6 +1,7 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
+import { useContext } from 'react'
 
-import { CartItem } from '../../../../contexts/ShopCartContext'
+import { CartItem, ShopCartContext } from '../../../../contexts/ShopCartContext'
 import { formatPrice } from '../../../../utils/format-price'
 import { SelectedCoffeeContainer } from './styles'
 
@@ -10,6 +11,12 @@ interface SelectedCoffeeProps {
 
 export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
   const { id, name, amount, price, image } = coffee
+
+  const { removeItemFromCart } = useContext(ShopCartContext)
+
+  const handleRemoveItemFromCart = () => {
+    removeItemFromCart(id)
+  }
 
   return (
     <SelectedCoffeeContainer>
@@ -28,7 +35,7 @@ export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
             <Plus size={14} />
           </div>
 
-          <button className="removeProduct">
+          <button className="removeProduct" onClick={handleRemoveItemFromCart}>
             <Trash size={16} />
             Remover
           </button>
