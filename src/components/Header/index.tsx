@@ -24,7 +24,7 @@ export function Header() {
         <NavLink to="/checkout" title="Timer">
           <button className="shopCartButton">
             {itemsCount > 0 ? (
-              <button className="itemsAmount">{itemsCount}</button>
+              <span className="itemsAmount">{itemsCount}</span>
             ) : (
               ''
             )}
