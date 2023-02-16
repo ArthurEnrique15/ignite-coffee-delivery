@@ -49,6 +49,13 @@ export const HeaderContainer = styled.header`
 
     color: ${(props) => props.theme['yellow-dark']};
     background-color: ${(props) => props.theme['yellow-light']};
+
+    transition: 0.2s;
+  }
+
+  .shopCartButton:hover {
+    cursor: pointer;
+    background-color: ${(props) => props.theme.yellow};
   }
 
   .itemsAmount {
