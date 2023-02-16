@@ -8,15 +8,7 @@ export function CoffeeList() {
       <span className="listTitle">Nossos cafés</span>
       <div className="coffeeList">
         {AVAILABLE_COFFEES.map((coffee) => (
-          <Coffee
-            key={coffee.id}
-            id={coffee.id}
-            name={coffee.name}
-            description={coffee.description}
-            tags={coffee.tags}
-            price={coffee.price}
-            image={coffee.image}
-          />
+          <Coffee key={coffee.id} {...coffee} />
         ))}
       </div>
     </CoffeeListContainer>
