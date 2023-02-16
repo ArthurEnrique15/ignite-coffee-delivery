@@ -1,19 +1,29 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 
-import coffeeImg from '../../../../assets/coffeeTypes/expresso-americano.png'
+import { CartItem } from '../../../../contexts/ShopCartContext'
 import { SelectedCoffeeContainer } from './styles'
 
-export function SelectedCoffee() {
+interface SelectedCoffeeProps {
+  coffee: CartItem
+}
+
+export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
+  const { id, name, amount, price, image } = coffee
+
   return (
     <SelectedCoffeeContainer>
-      <img className="coffeeImg" src={coffeeImg} alt="" />
+      <img
+        className="coffeeImg"
+        src={`src/assets/coffeeTypes/${image}`}
+        alt=""
+      />
       <div className="coffeeInfo">
-        <span>Expresso Tradicional</span>
+        <span>{name}</span>
 
         <div className="productActions">
           <div className="productCount">
             <Minus size={14} />
-            <span>1</span>
+            <span>{amount}</span>
             <Plus size={14} />
           </div>
 
@@ -25,7 +35,7 @@ export function SelectedCoffee() {
       </div>
 
       <div className="price">
-        <span>R$ 9,90</span>
+        <span>R$ {price}</span>
       </div>
     </SelectedCoffeeContainer>
   )
