@@ -1,34 +1,41 @@
 import { CoffeeContainer } from './styles'
 
-import coffeeImg from '../../../../assets/coffeeTypes/Type=Americano.png'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 
-export function Coffee() {
+interface CoffeeProps {
+  name: string
+  description: string
+  tags: string[]
+  price: number
+  image: string
+}
+
+export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
   return (
     <CoffeeContainer>
-      <img src={coffeeImg} alt="" />
+      <img src={`src/assets/coffeeTypes/${image}`} alt="" />
+
       <div className="tags">
-        <span>Tradicional</span>
-        <span>Gelado</span>
+        {tags.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
       </div>
 
       <div className="title">
-        <span>Expresso tradicional</span>
+        <span>{name}</span>
       </div>
 
-      <span className="description">
-        O tradicional café feito com água quente e grãos moídos
-      </span>
+      <span className="description">{description}</span>
 
       <footer>
         <div className="price">
           <span>R$ </span>
-          <span>9,90</span>
+          <span>{price}</span>
         </div>
 
         <div className="productCount">
           <Minus size={14} />
-          <span>1</span>
+          <span>0</span>
           <Plus size={14} />
         </div>
 
