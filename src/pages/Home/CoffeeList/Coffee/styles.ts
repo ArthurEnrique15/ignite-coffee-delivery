@@ -107,24 +107,29 @@ export const CoffeeContainer = styled.div`
 
       gap: 0.25rem;
       padding: 0.5rem;
-
-      span {
-        color: ${({ theme }) => theme['base-title']};
-        padding: 0.25rem;
-      }
-
-      svg {
-        transition: 0.2s;
-        color: ${({ theme }) => theme.purple};
-      }
-
-      svg:hover {
-        cursor: pointer;
-        color: ${({ theme }) => theme['purple-dark']};
-      }
     }
 
-    button {
+    .productCount span {
+      color: ${({ theme }) => theme['base-title']};
+      padding: 0.25rem;
+    }
+
+    .changeAmountButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: ${({ theme }) => theme['base-button']};
+      color: ${({ theme }) => theme.purple};
+      transition: 0.2s;
+    }
+
+    .changeAmountButton:hover {
+      cursor: pointer;
+      color: ${({ theme }) => theme['purple-dark']};
+    }
+
+    .shopCart {
       background-color: ${({ theme }) => theme['purple-dark']};
       border-radius: 6px;
       width: 2.375rem;
@@ -137,7 +142,7 @@ export const CoffeeContainer = styled.div`
       transition: 0.2s;
     }
 
-    button:hover {
+    .shopCart:hover {
       cursor: pointer;
       background-color: ${({ theme }) => theme.purple};
     }

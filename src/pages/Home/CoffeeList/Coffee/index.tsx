@@ -1,6 +1,7 @@
 import { CoffeeContainer } from './styles'
 
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { useState } from 'react'
 
 interface CoffeeProps {
   name: string
@@ -11,6 +12,18 @@ interface CoffeeProps {
 }
 
 export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
+  const [amount, setAmount] = useState(0)
+
+  const handleIncreaseAmount = () => {
+    setAmount(amount + 1)
+  }
+
+  const handleDecreaseAmount = () => {
+    if (amount > 0) {
+      setAmount(amount - 1)
+    }
+  }
+
   return (
     <CoffeeContainer>
       <img src={`src/assets/coffeeTypes/${image}`} alt="" />
@@ -34,12 +47,18 @@ export function Coffee({ name, description, tags, price, image }: CoffeeProps) {
         </div>
 
         <div className="productCount">
-          <Minus size={14} />
-          <span>0</span>
-          <Plus size={14} />
+          <button className="changeAmountButton" onClick={handleDecreaseAmount}>
+            <Minus size={14} />
+          </button>
+
+          <span>{amount}</span>
+
+          <button className="changeAmountButton" onClick={handleIncreaseAmount}>
+            <Plus size={14} />
+          </button>
         </div>
 
-        <button>
+        <button className="shopCart">
           <ShoppingCart size={22} weight="fill" color="white" />
         </button>
       </footer>
