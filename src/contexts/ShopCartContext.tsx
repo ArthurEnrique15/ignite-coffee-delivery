@@ -51,8 +51,6 @@ export function ShopCartContextProvider({
 }: ShopCartContextProviderProps) {
   const [shopCart, setShopCart] = useState<CartItem[]>(test)
 
-  console.log(shopCart)
-
   const addItemsInCart = (item: CartItem) => {
     const itemAlreadyExistsInCart = shopCart.find(
       (shopCartCartItem) => shopCartCartItem.id === item.id,
