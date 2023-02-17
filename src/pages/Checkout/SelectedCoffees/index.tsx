@@ -42,7 +42,9 @@ export function SelectedCoffees() {
             </div>
           </div>
 
-          <button className="finishOrderButton">Confirmar pedido</button>
+          <button className="finishOrderButton" type="submit">
+            Confirmar pedido
+          </button>
         </footer>
       </div>
     </SelectedCoffeesContainer>
