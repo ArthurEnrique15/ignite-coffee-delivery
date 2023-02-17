@@ -8,6 +8,7 @@ interface ShopCartContextType {
   addItemsInCart: (item: CartItem) => void
   removeItemFromCart: (id: number) => void
   decreaseItemAmountInCart: (id: number) => void
+  resetCart: () => void
 }
 
 export const ShopCartContext = createContext({} as ShopCartContextType)
@@ -101,6 +102,10 @@ export function ShopCartContextProvider({
     })
   }
 
+  const resetCart = () => {
+    setShopCart([])
+  }
+
   return (
     <ShopCartContext.Provider
       value={{
@@ -108,6 +113,7 @@ export function ShopCartContextProvider({
         addItemsInCart,
         removeItemFromCart,
         decreaseItemAmountInCart,
+        resetCart,
       }}
     >
       {children}

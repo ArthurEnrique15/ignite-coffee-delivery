@@ -2,8 +2,18 @@ import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { SuccessContainer } from './styles'
 
 import successImg from '../../assets/success.png'
+import { STORAGE_NAME } from '../../constants/storage-name'
 
 export function Success() {
+  const order = JSON.parse(localStorage.getItem(STORAGE_NAME) || '{}')
+  console.log(order)
+
+  const paymentTypes = {
+    money: 'Dinheiro',
+    creditCard: 'Cartão de crédito',
+    debitCard: 'Cartão de débito',
+  }
+
   return (
     <SuccessContainer>
       <div className="successTitle">
@@ -22,9 +32,13 @@ export function Success() {
               <div className="panelText">
                 <p>
                   Entrega em{' '}
-                  <span className="bold">Rua João Daniel Martinelli, 102</span>
+                  <span className="bold">
+                    {order.street}, {order.number}
+                  </span>
                 </p>
-                <span>Farrapos - Porto Alegre, RS</span>
+                <span>
+                  {order.neighborhood} - {order.city}, {order.federalUnit}
+                </span>
               </div>
             </div>
 
@@ -46,7 +60,9 @@ export function Success() {
 
               <div className="panelText">
                 <span>Pagamento na entrega</span>
-                <span className="bold">Cartão de Crédito</span>
+                <span className="bold">
+                  {paymentTypes[order.paymentType as keyof typeof paymentTypes]}
+                </span>
               </div>
             </div>
           </div>

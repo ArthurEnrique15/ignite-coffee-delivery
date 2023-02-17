@@ -7,6 +7,7 @@ import { Router } from './Router'
 import { ShopCartContextProvider } from './contexts/ShopCartContext'
 
 export function App() {
+  localStorage.clear()
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
