@@ -19,6 +19,8 @@ export const SelectedCoffeesContainer = styled.div`
     border-radius: 6px 36px;
 
     padding: 2.5rem;
+
+    margin-bottom: 2rem;
   }
 
   .priceDescription {
@@ -69,6 +71,7 @@ export const SelectedCoffeesContainer = styled.div`
   }
 
   .finishOrderButton:hover {
+    cursor: pointer;
     background-color: ${({ theme }) => theme['yellow-dark']};
   }
 `
