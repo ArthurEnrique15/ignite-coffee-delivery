@@ -1,6 +1,11 @@
 import { useContext } from 'react'
 import { ShoppingCart, MapPin } from 'phosphor-react'
-import { HeaderContainer } from './styles'
+import {
+  HeaderContainer,
+  ItemsAmount,
+  LocationButton,
+  ShopCartButton,
+} from './styles'
 
 import logo from '../../assets/Logo.png'
 import { ShopCartContext } from '../../contexts/ShopCartContext'
@@ -17,19 +22,15 @@ export function Header() {
         <img src={logo} alt="" />
       </NavLink>
       <div>
-        <button className="locationButton">
+        <LocationButton>
           <MapPin size={22} weight="fill" />
           <span>Belo Horizonte, MG</span>
-        </button>
+        </LocationButton>
         <NavLink to="/checkout" title="Timer">
-          <button className="shopCartButton">
-            {itemsCount > 0 ? (
-              <span className="itemsAmount">{itemsCount}</span>
-            ) : (
-              ''
-            )}
+          <ShopCartButton>
+            {itemsCount > 0 ? <ItemsAmount>{itemsCount}</ItemsAmount> : ''}
             <ShoppingCart size={22} weight="fill" />
-          </button>
+          </ShopCartButton>
         </NavLink>
       </div>
     </HeaderContainer>

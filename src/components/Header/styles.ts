@@ -18,67 +18,67 @@ export const HeaderContainer = styled.header`
     gap: 0.75rem;
     height: 2.375rem;
   }
+`
 
-  .locationButton {
-    border: 0px;
-    border-radius: 6px;
-    padding: 0.5rem;
+export const LocationButton = styled.button`
+  border: 0px;
+  border-radius: 6px;
+  padding: 0.5rem;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 0.25rem;
+  gap: 0.25rem;
 
-    span {
-      color: ${(props) => props.theme['purple-dark']};
-    }
-
-    color: ${(props) => props.theme.purple};
-    background-color: ${(props) => props.theme['purple-light']};
+  span {
+    color: ${(props) => props.theme['purple-dark']};
   }
 
-  .shopCartButton {
-    border: 0px;
-    border-radius: 6px;
+  color: ${(props) => props.theme.purple};
+  background-color: ${(props) => props.theme['purple-light']};
+`
 
-    padding: 0.5rem;
+export const ShopCartButton = styled.button`
+  border: 0px;
+  border-radius: 6px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 0.5rem;
 
-    color: ${(props) => props.theme['yellow-dark']};
-    background-color: ${(props) => props.theme['yellow-light']};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    transition: 0.2s;
-  }
+  color: ${(props) => props.theme['yellow-dark']};
+  background-color: ${(props) => props.theme['yellow-light']};
 
-  .shopCartButton:hover {
+  transition: 0.2s;
+
+  &:hover {
     cursor: pointer;
     background-color: ${(props) => props.theme.yellow};
   }
+`
 
-  .itemsAmount {
-    position: absolute;
+export const ItemsAmount = styled.div`
+  position: absolute;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    padding: 2px;
+  padding: 2px;
 
-    margin-top: calc(0px - 1rem);
-    margin-right: calc(0px - 2rem);
+  margin-top: calc(0px - 1rem);
+  margin-right: calc(0px - 2rem);
 
-    width: 1.15rem;
-    height: 1.15rem;
+  width: 1.15rem;
+  height: 1.15rem;
 
-    border-radius: 100%;
+  border-radius: 100%;
 
-    font-weight: 700;
-    font-size: 0.75rem;
+  font-weight: 700;
+  font-size: 0.75rem;
 
-    color: ${(props) => props.theme.white};
-    background-color: ${({ theme }) => theme['yellow-dark']};
-  }
+  color: ${(props) => props.theme.white};
+  background-color: ${({ theme }) => theme['yellow-dark']};
 `
