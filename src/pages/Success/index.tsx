@@ -6,7 +6,6 @@ import { STORAGE_NAME } from '../../constants/storage-name'
 
 export function Success() {
   const order = JSON.parse(localStorage.getItem(STORAGE_NAME) || '{}')
-  console.log(order)
 
   const paymentTypes = {
     money: 'Dinheiro',

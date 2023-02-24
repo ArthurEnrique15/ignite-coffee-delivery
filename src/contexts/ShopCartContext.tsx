@@ -1,7 +1,15 @@
-import { createContext, ReactNode, useState } from 'react'
-import { Coffee } from '../constants/coffees'
-
-export type CartItem = Coffee & { amount: number }
+import { createContext, ReactNode, useReducer } from 'react'
+import {
+  addItemToCartAction,
+  decreaseItemAmountInCartAction,
+  removeItemFromCartAction,
+  resetCartAction,
+} from '../reducers/shop-cart/actions'
+import {
+  CartItem,
+  Coffee,
+  shopCartReducer,
+} from '../reducers/shop-cart/reducer'
 
 interface ShopCartContextType {
   shopCart: CartItem[]
@@ -47,63 +55,29 @@ const test = [
   },
 ]
 
-export function ShopCartContextProvider({
-  children,
-}: ShopCartContextProviderProps) {
-  const [shopCart, setShopCart] = useState<CartItem[]>(test)
+export function ShopCartContextProvider(params: ShopCartContextProviderProps) {
+  const { children } = params
 
-  const addItemsInCart = (item: CartItem) => {
-    const itemAlreadyExistsInCart = shopCart.find(
-      (shopCartCartItem) => shopCartCartItem.id === item.id,
-    )
+  const [shopCartState, dispatch] = useReducer(shopCartReducer, {
+    shopCart: test,
+  })
 
-    if (itemAlreadyExistsInCart) {
-      setShopCart((state) => {
-        return state.map((shopCartCartItem) => {
-          if (shopCartCartItem.id === item.id) {
-            return {
-              ...shopCartCartItem,
-              amount: shopCartCartItem.amount + item.amount,
-            }
-          }
+  const { shopCart } = shopCartState
 
-          return shopCartCartItem
-        })
-      })
-    } else {
-      setShopCart((state) => {
-        return [...state, item]
-      })
-    }
+  const addItemsInCart = (coffee: Coffee) => {
+    dispatch(addItemToCartAction(coffee))
   }
 
   const removeItemFromCart = (id: number) => {
-    setShopCart((state) => {
-      return state.filter((item) => item.id !== id)
-    })
+    dispatch(removeItemFromCartAction(id))
   }
 
   const decreaseItemAmountInCart = (id: number) => {
-    setShopCart((state) => {
-      const item = state.find((item) => item.id === id)
-
-      if (!item || item.amount === 0) return state
-
-      return state.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            amount: item.amount - 1,
-          }
-        }
-
-        return item
-      })
-    })
+    dispatch(decreaseItemAmountInCartAction(id))
   }
 
   const resetCart = () => {
-    setShopCart([])
+    dispatch(resetCartAction())
   }
 
   return (
