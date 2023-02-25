@@ -1,9 +1,17 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 import { useContext } from 'react'
 
-import { CartItem, ShopCartContext } from '../../../../contexts/ShopCartContext'
+import { ShopCartContext } from '../../../../contexts/ShopCartContext'
+import { CartItem } from '../../../../reducers/shop-cart/reducer'
 import { formatPrice } from '../../../../utils/format-price'
-import { SelectedCoffeeContainer } from './styles'
+import {
+  CoffeeInfoContainer,
+  PriceContainer,
+  ProductActionsContainer,
+  ProductCountContainer,
+  RemoveProductButton,
+  SelectedCoffeeContainer,
+} from './styles'
 
 interface SelectedCoffeeProps {
   coffee: CartItem
@@ -31,31 +39,28 @@ export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
 
   return (
     <SelectedCoffeeContainer>
-      <img
-        className="coffeeImg"
-        src={`src/assets/coffeeTypes/${image}`}
-        alt=""
-      />
-      <div className="coffeeInfo">
+      <img src={`src/assets/coffeeTypes/${image}`} alt="" />
+
+      <CoffeeInfoContainer>
         <span>{name}</span>
 
-        <div className="productActions">
-          <div className="productCount">
+        <ProductActionsContainer>
+          <ProductCountContainer>
             <Minus size={14} onClick={handleDecreaseAmount} />
             <span>{amount}</span>
             <Plus size={14} onClick={handleIncreaseAmount} />
-          </div>
+          </ProductCountContainer>
 
-          <button className="removeProduct" onClick={handleRemoveItemFromCart}>
+          <RemoveProductButton onClick={handleRemoveItemFromCart}>
             <Trash size={16} />
             Remover
-          </button>
-        </div>
-      </div>
+          </RemoveProductButton>
+        </ProductActionsContainer>
+      </CoffeeInfoContainer>
 
-      <div className="price">
+      <PriceContainer>
         <span>R$ {formatPrice(price * amount)}</span>
-      </div>
+      </PriceContainer>
     </SelectedCoffeeContainer>
   )
 }
