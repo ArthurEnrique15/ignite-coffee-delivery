@@ -59,7 +59,7 @@ export const ShopCartButton = styled.button`
   }
 `
 
-export const ItemsAmount = styled.div`
+export const ItemsAmount = styled.button`
   position: absolute;
 
   display: flex;
