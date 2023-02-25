@@ -7,28 +7,36 @@ import {
 } from 'phosphor-react'
 import { useFormContext } from 'react-hook-form'
 
-import { CompleteOrderFormContainer } from './styles'
+import {
+  CompleteOrderFormContainer,
+  FormHeaderContainer,
+  FormPanelContainer,
+  InputsContainer,
+  PaymentOptionLabel,
+  PaymentOptionsContainer,
+  TitleContainer,
+} from './styles'
 
 export function CompleteOrderForm() {
   const { register } = useFormContext()
 
   return (
     <CompleteOrderFormContainer>
-      <div className="title">
+      <TitleContainer>
         <span>Complete seu pedido</span>
-      </div>
+      </TitleContainer>
 
-      <div className="formPanel addressPanel">
-        <div className="formHeader">
+      <FormPanelContainer>
+        <FormHeaderContainer>
           <MapPinLine className="addressIcon" size={22} />
 
-          <div className="formHeaderText">
+          <div className="headerText">
             <span>Endereço de entrega</span>
             <span>Informe o endereço onde deseja receber seu pedido</span>
           </div>
-        </div>
+        </FormHeaderContainer>
 
-        <div className="inputs">
+        <InputsContainer>
           <p>
             <input
               id="cep"
@@ -81,32 +89,32 @@ export function CompleteOrderForm() {
               {...register('federalUnit')}
             />
           </p>
-        </div>
-      </div>
+        </InputsContainer>
+      </FormPanelContainer>
 
-      <div className="formPanel paymentPanel">
-        <div className="formHeader paymentPanelHeader">
+      <FormPanelContainer>
+        <FormHeaderContainer>
           <CurrencyDollar className="paymentIcon" size={22} />
 
-          <div className="formHeaderText">
+          <div className="headerText">
             <span>Pagamento</span>
             <span>
               O pagamento é feito na entrega. Escolha a forma que deseja pagar
             </span>
           </div>
-        </div>
+        </FormHeaderContainer>
 
-        <div className="paymentOptions">
+        <PaymentOptionsContainer>
           <input
             id="creditCard"
             type="radio"
             value="creditCard"
             {...register('paymentType')}
           />
-          <label htmlFor="creditCard">
+          <PaymentOptionLabel htmlFor="creditCard">
             <CreditCard size={16} />
             <span>Cartão de crédito</span>
-          </label>
+          </PaymentOptionLabel>
 
           <input
             id="debitCard"
@@ -114,10 +122,10 @@ export function CompleteOrderForm() {
             value="debitCard"
             {...register('paymentType')}
           />
-          <label htmlFor="debitCard">
+          <PaymentOptionLabel htmlFor="debitCard">
             <Bank size={16} />
             <span>Cartão de débito</span>
-          </label>
+          </PaymentOptionLabel>
 
           <input
             id="money"
@@ -125,12 +133,12 @@ export function CompleteOrderForm() {
             value="money"
             {...register('paymentType')}
           />
-          <label htmlFor="money">
+          <PaymentOptionLabel htmlFor="money">
             <Money size={16} />
             <span>Dinheiro</span>
-          </label>
-        </div>
-      </div>
+          </PaymentOptionLabel>
+        </PaymentOptionsContainer>
+      </FormPanelContainer>
     </CompleteOrderFormContainer>
   )
 }
