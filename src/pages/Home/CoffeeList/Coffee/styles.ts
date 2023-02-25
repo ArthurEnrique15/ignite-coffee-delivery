@@ -12,7 +12,6 @@ export const CoffeeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* justify-content: center; */
 
   padding: 0 1.25rem;
 
@@ -22,129 +21,129 @@ export const CoffeeContainer = styled.div`
     margin-top: calc(0px - 1.25rem);
   }
 
-  .tags {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 0.75rem;
-    margin-bottom: 1rem;
-
-    gap: 0.25rem;
-
-    span {
-      text-transform: uppercase;
-      color: ${({ theme }) => theme['yellow-dark']};
-      background-color: ${({ theme }) => theme['yellow-light']};
-      border-radius: 100px;
-
-      font-weight: 700;
-      font-size: 0.625rem;
-
-      padding: 0.25rem 0.5rem;
-    }
-  }
-
-  .title {
-    color: ${({ theme }) => theme['base-subtitle']};
-
-    font-family: 'Baloo 2';
-
-    font-weight: 700;
-    font-size: 1.25rem;
-
-    margin-bottom: 0.5rem;
-  }
-
   .description {
     color: ${({ theme }) => theme['base-label']};
     font-size: 0.875rem;
   }
+`
 
-  footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+export const TagsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-    margin-top: 2.0625rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
 
-    gap: 0.5rem;
+  gap: 0.25rem;
 
-    .price {
-      /* width: 5.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; */
+  span {
+    text-transform: uppercase;
+    color: ${({ theme }) => theme['yellow-dark']};
+    background-color: ${({ theme }) => theme['yellow-light']};
+    border-radius: 100px;
 
-      margin-right: 1.5rem;
+    font-weight: 700;
+    font-size: 0.625rem;
 
-      span {
-        color: ${({ theme }) => theme['base-text']};
-      }
+    padding: 0.25rem 0.5rem;
+  }
+`
 
-      span:first-child {
-        font-size: 0.875rem;
-      }
+export const TitleContainer = styled.div`
+  color: ${({ theme }) => theme['base-subtitle']};
 
-      span:last-child {
-        font-family: 'Baloo 2';
-        font-weight: 800;
-        font-size: 1.5rem;
-      }
-    }
+  font-family: 'Baloo 2';
 
-    .productCount {
-      background-color: ${({ theme }) => theme['base-button']};
+  font-weight: 700;
+  font-size: 1.25rem;
 
-      border-radius: 6px;
+  margin-bottom: 0.5rem;
+`
 
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+export const FooterContainer = styled.footer`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-      gap: 0.25rem;
-      padding: 0.5rem;
-    }
+  margin-top: 2.0625rem;
 
-    .productCount span {
-      color: ${({ theme }) => theme['base-title']};
-      padding: 0.25rem;
-    }
+  gap: 0.5rem;
+`
 
-    .changeAmountButton {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+export const PriceContainer = styled.div`
+  /* width: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; */
 
-      background-color: ${({ theme }) => theme['base-button']};
-      color: ${({ theme }) => theme.purple};
-      transition: 0.2s;
-    }
+  margin-right: 1.5rem;
 
-    .changeAmountButton:hover {
-      cursor: pointer;
-      color: ${({ theme }) => theme['purple-dark']};
-    }
+  span {
+    color: ${({ theme }) => theme['base-text']};
+  }
 
-    .shopCart {
-      background-color: ${({ theme }) => theme['purple-dark']};
-      border-radius: 6px;
-      width: 2.375rem;
-      height: 2.375rem;
+  span:first-child {
+    font-size: 0.875rem;
+  }
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  span:last-child {
+    font-family: 'Baloo 2';
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+`
 
-      transition: 0.2s;
-    }
+export const PriceCountContainer = styled.div`
+  background-color: ${({ theme }) => theme['base-button']};
 
-    .shopCart:hover {
-      cursor: pointer;
-      background-color: ${({ theme }) => theme.purple};
-    }
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.25rem;
+  padding: 0.5rem;
+
+  span {
+    color: ${({ theme }) => theme['base-title']};
+    padding: 0.25rem;
+  }
+`
+
+export const ChangeAmountButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${({ theme }) => theme['base-button']};
+  color: ${({ theme }) => theme.purple};
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme['purple-dark']};
+  }
+`
+
+export const AddItemsButton = styled.button`
+  background-color: ${({ theme }) => theme['purple-dark']};
+  border-radius: 6px;
+  width: 2.375rem;
+  height: 2.375rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.purple};
   }
 `

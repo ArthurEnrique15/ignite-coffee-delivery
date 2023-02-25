@@ -1,4 +1,13 @@
-import { CoffeeContainer } from './styles'
+import {
+  AddItemsButton,
+  ChangeAmountButton,
+  CoffeeContainer,
+  FooterContainer,
+  PriceContainer,
+  PriceCountContainer,
+  TagsContainer,
+  TitleContainer,
+} from './styles'
 
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { useContext, useState } from 'react'
@@ -15,7 +24,7 @@ interface CoffeeProps {
 }
 
 export function Coffee(props: CoffeeProps) {
-  const { id, name, description, tags, price, image } = props
+  const { name, description, tags, price, image } = props
 
   const { addItemsInCart } = useContext(ShopCartContext)
 
@@ -45,40 +54,40 @@ export function Coffee(props: CoffeeProps) {
     <CoffeeContainer>
       <img src={`src/assets/coffeeTypes/${image}`} alt="" />
 
-      <div className="tags">
+      <TagsContainer>
         {tags.map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
-      </div>
+      </TagsContainer>
 
-      <div className="title">
+      <TitleContainer>
         <span>{name}</span>
-      </div>
+      </TitleContainer>
 
       <span className="description">{description}</span>
 
-      <footer>
-        <div className="price">
+      <FooterContainer>
+        <PriceContainer>
           <span>R$ </span>
           <span>{formatPrice(price)}</span>
-        </div>
+        </PriceContainer>
 
-        <div className="productCount">
-          <button className="changeAmountButton" onClick={handleDecreaseAmount}>
+        <PriceCountContainer>
+          <ChangeAmountButton onClick={handleDecreaseAmount}>
             <Minus size={14} />
-          </button>
+          </ChangeAmountButton>
 
           <span>{amount}</span>
 
-          <button className="changeAmountButton" onClick={handleIncreaseAmount}>
+          <ChangeAmountButton onClick={handleIncreaseAmount}>
             <Plus size={14} />
-          </button>
-        </div>
+          </ChangeAmountButton>
+        </PriceCountContainer>
 
-        <button className="shopCart" onClick={handleAddItemsInCart}>
+        <AddItemsButton onClick={handleAddItemsInCart}>
           <ShoppingCart size={22} weight="fill" color="white" />
-        </button>
-      </footer>
+        </AddItemsButton>
+      </FooterContainer>
     </CoffeeContainer>
   )
 }
