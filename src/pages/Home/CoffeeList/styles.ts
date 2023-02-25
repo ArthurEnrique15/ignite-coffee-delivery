@@ -9,12 +9,12 @@ export const CoffeeListContainer = styled.div`
     font-weight: 800;
     font-size: 2rem;
   }
+`
 
-  .coffeeList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem 2rem;
+export const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 2rem;
 
-    margin-top: 3.375rem;
-  }
+  margin-top: 3.375rem;
 `
