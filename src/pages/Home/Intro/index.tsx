@@ -1,48 +1,57 @@
 import { Timer, ShoppingCart, Package, Coffee } from 'phosphor-react'
 
 import coffeeImg from '../../../assets/home-coffee.png'
-import { IntroContainer } from './styles'
+import {
+  CartButton,
+  CoffeeButton,
+  DescriptionContainer,
+  IntroContainer,
+  ItemContainer,
+  PackageButton,
+  TimerButton,
+  TitleContainer,
+} from './styles'
 
 export function Intro() {
   return (
     <IntroContainer>
-      <div className="title">
+      <TitleContainer>
         <h1>Encontre o café perfeito para qualquer hora do dia</h1>
         <span>
           Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
           hora
         </span>
-      </div>
+      </TitleContainer>
 
-      <div className="description">
-        <div className="item">
-          <button className="cartButton">
+      <DescriptionContainer>
+        <ItemContainer>
+          <CartButton>
             <ShoppingCart size={16} weight="fill" />
-          </button>
+          </CartButton>
           <span>Compra simples e segura</span>
-        </div>
+        </ItemContainer>
 
-        <div className="item">
-          <button className="packageButton">
+        <ItemContainer>
+          <PackageButton>
             <Package size={16} weight="fill" />
-          </button>
+          </PackageButton>
           <span>Embalagem mantém o café intacto</span>
-        </div>
+        </ItemContainer>
 
-        <div className="item">
-          <button className="timerButton">
+        <ItemContainer>
+          <TimerButton>
             <Timer size={16} weight="fill" />
-          </button>
+          </TimerButton>
           <span>Entrega rápida e rastreada</span>
-        </div>
+        </ItemContainer>
 
-        <div className="item">
-          <button className="coffeeButton">
+        <ItemContainer>
+          <CoffeeButton>
             <Coffee size={16} weight="fill" />
-          </button>
+          </CoffeeButton>
           <span>O café chega fresquinho até você</span>
-        </div>
-      </div>
+        </ItemContainer>
+      </DescriptionContainer>
 
       <img src={coffeeImg} alt="" />
     </IntroContainer>
