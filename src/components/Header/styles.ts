@@ -59,7 +59,7 @@ export const ShopCartButton = styled.button`
   }
 `
 
-export const ItemsAmount = styled.button`
+export const ItemsAmount = styled.span`
   position: absolute;
 
   display: flex;
