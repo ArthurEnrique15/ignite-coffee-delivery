@@ -1,5 +1,16 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import { SuccessContainer } from './styles'
+import {
+  AddressButton,
+  MoneyButton,
+  RowText,
+  SuccessContainer,
+  SuccessContentBorder,
+  SuccessContentContainer,
+  SuccessPanelContainer,
+  SuccessPanelRow,
+  SuccessTitleContainer,
+  TimerButton,
+} from './styles'
 
 import successImg from '../../assets/success.png'
 import { STORAGE_NAME } from '../../constants/storage-name'
@@ -15,20 +26,20 @@ export function Success() {
 
   return (
     <SuccessContainer>
-      <div className="successTitle">
+      <SuccessTitleContainer>
         <h1>Uhu! Pedido confirmado</h1>
         <span>Agora é só aguardar que logo o café chegará até você</span>
-      </div>
+      </SuccessTitleContainer>
 
-      <div className="successContent">
-        <div className="panelBorder">
-          <div className="successPanel">
-            <div className="panelLine">
-              <button className="addressButton">
+      <SuccessContentContainer>
+        <SuccessContentBorder>
+          <SuccessPanelContainer>
+            <SuccessPanelRow>
+              <AddressButton>
                 <MapPin size={16} weight="fill" />
-              </button>
+              </AddressButton>
 
-              <div className="panelText">
+              <RowText>
                 <p>
                   Entrega em{' '}
                   <span className="bold">
@@ -38,40 +49,40 @@ export function Success() {
                 <span>
                   {order.neighborhood} - {order.city}, {order.federalUnit}
                 </span>
-              </div>
-            </div>
+              </RowText>
+            </SuccessPanelRow>
 
-            <div className="panelLine">
-              <button className="timerButton">
+            <SuccessPanelRow>
+              <TimerButton>
                 <Timer size={16} weight="fill" />
-              </button>
+              </TimerButton>
 
-              <div className="panelText">
+              <RowText>
                 <span>Previsão de entrega</span>
                 <span className="bold">20 min - 30 min</span>
-              </div>
-            </div>
+              </RowText>
+            </SuccessPanelRow>
 
-            <div className="panelLine">
-              <button className="moneyButton">
+            <SuccessPanelRow>
+              <MoneyButton>
                 <CurrencyDollar size={16} weight="fill" />
-              </button>
+              </MoneyButton>
 
-              <div className="panelText">
+              <RowText>
                 <span>Pagamento na entrega</span>
                 <span className="bold">
                   {paymentTypes[order.paymentType as keyof typeof paymentTypes]}
                 </span>
-              </div>
-            </div>
-          </div>
-        </div>
+              </RowText>
+            </SuccessPanelRow>
+          </SuccessPanelContainer>
+        </SuccessContentBorder>
 
         <img
           src={successImg}
           alt="Um desenho de um homem montado em uma moto indo entregar o pedido"
         />
-      </div>
+      </SuccessContentContainer>
     </SuccessContainer>
   )
 }

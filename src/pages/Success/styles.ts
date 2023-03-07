@@ -8,16 +8,16 @@ export const SuccessContainer = styled.div`
   gap: 1.75rem;
 
   width: 100%;
+`
 
-  .successTitle {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+export const SuccessTitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    gap: 0.25rem;
-  }
+  gap: 0.25rem;
 
-  .successTitle h1 {
+  h1 {
     font-family: 'Baloo 2';
     font-weight: 800;
     font-size: 2rem;
@@ -25,93 +25,93 @@ export const SuccessContainer = styled.div`
     color: ${({ theme }) => theme['yellow-dark']};
   }
 
-  .successTitle span {
+  span {
     font-size: 1.25rem;
     color: ${({ theme }) => theme['base-subtitle']};
   }
+`
 
-  .successContent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+export const SuccessContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-    width: 100%;
-  }
+  width: 100%;
+`
 
-  .panelBorder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(
-      to right,
-      ${({ theme }) => theme.yellow},
-      ${({ theme }) => theme.purple}
-    );
+export const SuccessContentBorder = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    ${({ theme }) => theme.yellow},
+    ${({ theme }) => theme.purple}
+  );
 
-    border-radius: 6px 36px;
+  border-radius: 6px 36px;
 
-    padding: 1px;
+  padding: 1px;
 
-    height: 16.875rem + 1px;
-    width: 32.875rem + 1px;
-  }
+  height: 16.875rem + 1px;
+  width: 32.875rem + 1px;
+`
 
-  .successPanel {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+export const SuccessPanelContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    gap: 2rem;
+  gap: 2rem;
 
-    padding: 2.5rem;
+  padding: 2.5rem;
 
-    border-radius: 6px 36px;
-    background-color: ${({ theme }) => theme.white};
+  border-radius: 6px 36px;
+  background-color: ${({ theme }) => theme.white};
 
-    height: 16.875rem;
-    width: 32.875rem;
-  }
+  height: 16.875rem;
+  width: 32.875rem;
+`
 
-  .panelLine {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
+export const SuccessPanelRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+`
 
-  .panelLine button {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100px;
+const BaseSuccessLineButton = styled.button`
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    color: ${({ theme }) => theme.white};
-  }
+  color: ${({ theme }) => theme.white};
+`
 
-  .addressButton {
-    background-color: ${({ theme }) => theme.purple};
-  }
+export const AddressButton = styled(BaseSuccessLineButton)`
+  background-color: ${({ theme }) => theme.purple};
+`
 
-  .timerButton {
-    background-color: ${({ theme }) => theme.yellow};
-  }
+export const TimerButton = styled(BaseSuccessLineButton)`
+  background-color: ${({ theme }) => theme.yellow};
+`
 
-  .moneyButton {
-    background-color: ${({ theme }) => theme['yellow-dark']};
-  }
+export const MoneyButton = styled(BaseSuccessLineButton)`
+  background-color: ${({ theme }) => theme['yellow-dark']};
+`
 
-  .panelText {
-    display: flex;
-    flex-direction: column;
+export const RowText = styled.div`
+  display: flex;
+  flex-direction: column;
 
-    color: ${({ theme }) => theme['base-text']};
-  }
+  color: ${({ theme }) => theme['base-text']};
 
-  .panelText .bold {
+  .bold {
     font-weight: 700;
   }
 `
