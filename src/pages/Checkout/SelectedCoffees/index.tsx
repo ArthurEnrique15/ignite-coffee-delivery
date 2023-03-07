@@ -2,7 +2,15 @@ import { useContext } from 'react'
 import { ShopCartContext } from '../../../contexts/ShopCartContext'
 import { formatPrice } from '../../../utils/format-price'
 import { SelectedCoffee } from './SelectedCoffee'
-import { SelectedCoffeesContainer } from './styles'
+import {
+  BigTextRow,
+  FinishOrderButton,
+  LesserTextRow,
+  OrderValueContainer,
+  SelectedCoffeesContainer,
+  SelectedCoffeesPanel,
+  SelectedCoffeesTitle,
+} from './styles'
 
 export function SelectedCoffees() {
   const { shopCart } = useContext(ShopCartContext)
@@ -15,38 +23,36 @@ export function SelectedCoffees() {
 
   return (
     <SelectedCoffeesContainer>
-      <div className="title">
+      <SelectedCoffeesTitle>
         <span>Cafés selecionados</span>
-      </div>
+      </SelectedCoffeesTitle>
 
-      <div className="panel">
+      <SelectedCoffeesPanel>
         {shopCart.map((coffee) => (
           <SelectedCoffee key={coffee.id} coffee={{ ...coffee }} />
         ))}
 
         <footer>
-          <div className="priceDescription">
-            <div className="lesserText">
+          <OrderValueContainer>
+            <LesserTextRow>
               <span>Total de itens</span>
               <span>R$ {formatPrice(totalCartPrice)}</span>
-            </div>
+            </LesserTextRow>
 
-            <div className="lesserText">
+            <LesserTextRow>
               <span>Entrega</span>
               <span>R$ {formatPrice(deliveryCost)}</span>
-            </div>
+            </LesserTextRow>
 
-            <div className="bigText">
+            <BigTextRow>
               <span>Total</span>
               <span>R$ {formatPrice(totalCartPrice + deliveryCost)}</span>
-            </div>
-          </div>
+            </BigTextRow>
+          </OrderValueContainer>
 
-          <button className="finishOrderButton" type="submit">
-            Confirmar pedido
-          </button>
+          <FinishOrderButton>Confirmar pedido</FinishOrderButton>
         </footer>
-      </div>
+      </SelectedCoffeesPanel>
     </SelectedCoffeesContainer>
   )
 }

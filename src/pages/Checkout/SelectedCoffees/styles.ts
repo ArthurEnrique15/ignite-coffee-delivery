@@ -1,76 +1,77 @@
 import styled from 'styled-components'
 
 export const SelectedCoffeesContainer = styled.div`
-  width: 28rem;
+  display: flex;
+  flex-direction: column;
+`
 
-  .title {
-    color: ${(props) => props.theme['base-subtitle']};
+export const SelectedCoffeesTitle = styled.div`
+  color: ${(props) => props.theme['base-subtitle']};
 
-    font-family: 'Baloo 2';
-    font-weight: 700;
-    font-size: 1.125rem;
+  font-family: 'Baloo 2';
+  font-weight: 700;
+  font-size: 1.125rem;
 
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+`
+
+export const SelectedCoffeesPanel = styled.div`
+  background-color: ${({ theme }) => theme['base-card']};
+
+  border-radius: 6px 36px;
+
+  padding: 2.5rem;
+
+  margin-bottom: 2rem;
+`
+
+export const LesserTextRow = styled.div`
+  font-weight: 400;
+  color: ${({ theme }) => theme['base-text']};
+
+  span:first-child {
+    font-size: 0.875rem;
   }
+`
 
-  .panel {
-    background-color: ${({ theme }) => theme['base-card']};
+export const BigTextRow = styled.div`
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: ${({ theme }) => theme['base-subtitle']};
+`
 
-    border-radius: 6px 36px;
+export const OrderValueContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 
-    padding: 2.5rem;
+  margin: 1.5rem 0;
 
-    margin-bottom: 2rem;
-  }
-
-  .priceDescription {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-
-    margin: 1.5rem 0;
-  }
-
-  .priceDescription div {
+  div {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+`
 
-  .lesserText {
-    font-weight: 400;
-    color: ${({ theme }) => theme['base-text']};
-  }
+export const FinishOrderButton = styled.button`
+  width: 100%;
+  height: 2.875rem;
 
-  .lesserText span:first-child {
-    font-size: 0.875rem;
-  }
+  border-radius: 6px;
 
-  .bigText {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: ${({ theme }) => theme['base-subtitle']};
-  }
+  color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme.yellow};
 
-  .finishOrderButton {
-    width: 100%;
-    height: 2.875rem;
+  text-transform: uppercase;
 
-    border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 160%;
 
-    color: ${({ theme }) => theme.white};
-    background-color: ${({ theme }) => theme.yellow};
+  transition: 0.2s;
 
-    text-transform: uppercase;
-
-    font-weight: 700;
-    font-size: 0.875rem;
-    line-height: 160%;
-
-    transition: 0.2s;
-  }
-
-  .finishOrderButton:hover {
+  &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme['yellow-dark']};
   }
