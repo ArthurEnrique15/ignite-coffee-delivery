@@ -17,4 +17,13 @@ export const ListContainer = styled.div`
   gap: 2.5rem 2rem;
 
   margin-top: 3.375rem;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.5rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
