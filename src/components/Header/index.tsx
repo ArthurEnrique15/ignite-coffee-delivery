@@ -5,6 +5,7 @@ import {
   ItemsAmount,
   LocationButton,
   ShopCartButton,
+  HeaderButtonsContainer,
 } from './styles'
 
 import logo from '../../assets/Logo.png'
@@ -21,7 +22,7 @@ export function Header() {
       <NavLink to="/" title="Timer">
         <img src={logo} alt="" />
       </NavLink>
-      <div>
+      <HeaderButtonsContainer>
         <LocationButton>
           <MapPin size={22} weight="fill" />
           <span>Belo Horizonte, MG</span>
@@ -32,7 +33,7 @@ export function Header() {
             <ShoppingCart size={22} weight="fill" />
           </ShopCartButton>
         </NavLink>
-      </div>
+      </HeaderButtonsContainer>
     </HeaderContainer>
   )
 }

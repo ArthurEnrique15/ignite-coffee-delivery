@@ -9,15 +9,15 @@ export const HeaderContainer = styled.header`
   height: 6.5rem;
 
   padding: 2rem 0;
+`
 
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+export const HeaderButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    gap: 0.75rem;
-    height: 2.375rem;
-  }
+  gap: 0.75rem;
+  height: 2.375rem;
 `
 
 export const LocationButton = styled.button`
