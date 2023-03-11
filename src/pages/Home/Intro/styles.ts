@@ -15,6 +15,8 @@ export const IntroContainer = styled.div`
     margin: 2rem auto;
     flex-direction: column;
     align-items: center;
+
+    gap: 2rem;
   }
 `
 
