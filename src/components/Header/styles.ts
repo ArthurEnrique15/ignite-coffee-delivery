@@ -36,6 +36,10 @@ export const LocationButton = styled.button`
 
   color: ${(props) => props.theme.purple};
   background-color: ${(props) => props.theme['purple-light']};
+
+  @media screen and (max-width: 375px) {
+    font-size: 0.5rem;
+  }
 `
 
 export const ShopCartButton = styled.button`
