@@ -1,27 +1,48 @@
 import styled from 'styled-components'
 
 export const IntroContainer = styled.div`
-  height: 34rem;
+  min-height: 34rem;
   width: 100%;
   margin: 5.75rem auto;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  gap: 3.5rem;
+
+  @media screen and (max-width: 1024px) {
+    margin: 2rem auto;
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
 
   gap: 4.125rem;
 
-  img {
-    position: absolute;
-    display: flex;
-    align-self: flex-end;
-    width: 29.75rem;
-    height: 22.5rem;
+  margin-top: 2px;
+
+  @media screen and (max-width: 1024px) {
+    gap: 2rem;
+  }
+`
+
+export const ImageContainer = styled.div`
+  @media screen and (max-width: 768px) {
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 `
 
 export const TitleContainer = styled.div`
-  width: 36.75rem;
+  max-width: 36.75rem;
 
   display: flex;
   flex-direction: column;
@@ -50,6 +71,14 @@ export const DescriptionContainer = styled.div`
 
   height: 5.25rem;
   max-width: 35.3rem;
+
+  @media screen and (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    height: 12rem;
+  }
 `
 
 export const ItemContainer = styled.div`
