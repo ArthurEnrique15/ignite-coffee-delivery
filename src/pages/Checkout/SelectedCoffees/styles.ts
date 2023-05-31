@@ -3,6 +3,12 @@ import styled from 'styled-components'
 export const SelectedCoffeesContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  min-width: 28rem;
+
+  @media screen and (max-width: 500px) {
+    min-width: 0;
+  }
 `
 
 export const SelectedCoffeesTitle = styled.div`
@@ -23,6 +29,10 @@ export const SelectedCoffeesPanel = styled.div`
   padding: 2.5rem;
 
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 1.5rem 1rem;
+  }
 `
 
 export const LesserTextRow = styled.div`

@@ -6,11 +6,12 @@ import { CartItem } from '../../../../reducers/shop-cart/reducer'
 import { formatPrice } from '../../../../utils/format-price'
 import {
   CoffeeInfoContainer,
-  PriceContainer,
   ProductActionsContainer,
   ProductCountContainer,
   RemoveProductButton,
   SelectedCoffeeContainer,
+  NamePriceContainer,
+  PriceText,
 } from './styles'
 
 interface SelectedCoffeeProps {
@@ -42,7 +43,10 @@ export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
       <img src={`src/assets/coffeeTypes/${image}`} alt="" />
 
       <CoffeeInfoContainer>
-        <span>{name}</span>
+        <NamePriceContainer>
+          <span>{name}</span>
+          <PriceText>R$ {formatPrice(price * amount)}</PriceText>
+        </NamePriceContainer>
 
         <ProductActionsContainer>
           <ProductCountContainer>
@@ -57,10 +61,6 @@ export function SelectedCoffee({ coffee }: SelectedCoffeeProps) {
           </RemoveProductButton>
         </ProductActionsContainer>
       </CoffeeInfoContainer>
-
-      <PriceContainer>
-        <span>R$ {formatPrice(price * amount)}</span>
-      </PriceContainer>
     </SelectedCoffeeContainer>
   )
 }

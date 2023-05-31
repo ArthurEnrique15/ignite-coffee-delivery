@@ -112,7 +112,9 @@ export function CompleteOrderForm() {
             {...register('paymentType')}
           />
           <PaymentOptionLabel htmlFor="creditCard">
-            <CreditCard size={16} />
+            <div>
+              <CreditCard size={16} />
+            </div>
             <span>Cartão de crédito</span>
           </PaymentOptionLabel>
 
@@ -123,7 +125,9 @@ export function CompleteOrderForm() {
             {...register('paymentType')}
           />
           <PaymentOptionLabel htmlFor="debitCard">
-            <Bank size={16} />
+            <div>
+              <Bank size={16} />
+            </div>
             <span>Cartão de débito</span>
           </PaymentOptionLabel>
 
@@ -134,7 +138,9 @@ export function CompleteOrderForm() {
             {...register('paymentType')}
           />
           <PaymentOptionLabel htmlFor="money">
-            <Money size={16} />
+            <div>
+              <Money size={16} />
+            </div>
             <span>Dinheiro</span>
           </PaymentOptionLabel>
         </PaymentOptionsContainer>

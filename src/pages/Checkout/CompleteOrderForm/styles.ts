@@ -14,6 +14,10 @@ export const CompleteOrderFormContainer = styled.div`
   .paymentIcon {
     color: ${(props) => props.theme.purple};
   }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `
 
 export const TitleContainer = styled.div`
@@ -99,6 +103,20 @@ export const InputsContainer = styled.div`
   .federalUnitInput {
     width: 3.75rem;
   }
+
+  @media screen and (max-width: 500px) {
+    p {
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .federalUnitInput {
+      width: 100%;
+    }
+  }
 `
 
 export const PaymentOptionsContainer = styled.div`
@@ -116,13 +134,18 @@ export const PaymentOptionsContainer = styled.div`
     background-color: ${(props) => props.theme['purple-light']};
     border-color: ${(props) => props.theme.purple};
   }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `
 
 export const PaymentOptionLabel = styled.label`
   width: 100%;
-  height: 3.1875rem;
+  height: 3rem;
 
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   gap: 0.75rem;
 
@@ -133,8 +156,13 @@ export const PaymentOptionLabel = styled.label`
   background-color: ${(props) => props.theme['base-button']};
   transition: 0.1s;
 
-  svg {
-    color: ${(props) => props.theme.purple};
+  div {
+    width: 1rem;
+    height: 1rem;
+
+    svg {
+      color: ${(props) => props.theme.purple};
+    }
   }
 
   span {
@@ -152,5 +180,19 @@ export const PaymentOptionLabel = styled.label`
 
   &:hover span {
     color: ${(props) => props.theme['base-subtitle']};
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0.5rem;
+
+    div {
+      width: 1.25rem;
+      height: 1.25rem;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 `

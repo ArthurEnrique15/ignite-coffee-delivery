@@ -3,14 +3,14 @@ import styled from 'styled-components'
 export const SelectedCoffeeContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 
-  width: 23rem;
+  width: 100%;
   height: 6.5rem;
 
   gap: 1.25rem;
 
-  padding: 0.5rem 0.25rem 1.25rem;
+  padding: 0.75rem 0.25rem 1rem;
 
   border-bottom: 1px solid ${({ theme }) => theme['base-button']};
   margin-bottom: 0.75rem;
@@ -18,6 +18,10 @@ export const SelectedCoffeeContainer = styled.div`
   img {
     width: 4rem;
     height: 4rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0.75rem 0 1rem;
   }
 `
 
@@ -28,7 +32,25 @@ export const CoffeeInfoContainer = styled.div`
 
   gap: 0.5rem;
 
-  margin: 1px 0;
+  width: 100%;
+`
+
+export const NamePriceContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+`
+
+export const PriceText = styled.span`
+  color: ${({ theme }) => theme['base-text']};
+  font-weight: 700;
 `
 
 export const ProductActionsContainer = styled.div`
@@ -98,15 +120,4 @@ export const RemoveProductButton = styled.button`
     background-color: ${({ theme }) => theme['base-hover']};
     color: ${({ theme }) => theme['base-subtitle']};
   }
-`
-
-export const PriceContainer = styled.div`
-  display: flex;
-  height: 100%;
-  width: 100%;
-  text-align: right;
-  justify-content: flex-end;
-
-  color: ${({ theme }) => theme['base-text']};
-  font-weight: 700;
 `
