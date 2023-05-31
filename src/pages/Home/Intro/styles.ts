@@ -1,18 +1,21 @@
 import styled from 'styled-components'
 
 export const IntroContainer = styled.div`
-  min-height: 34rem;
-  width: 100%;
-  margin: 5.75rem auto;
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 
   gap: 3.5rem;
 
+  min-height: 34rem;
+  width: 100%;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+
+  max-width: 70rem;
+
   @media screen and (max-width: 1024px) {
-    margin: 2rem auto;
+    margin-top: 5rem;
     flex-direction: column;
     align-items: center;
 
@@ -27,9 +30,7 @@ export const TextContainer = styled.div`
 
   gap: 4.125rem;
 
-  margin-top: 2px;
-
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     gap: 2rem;
   }
 `
@@ -64,20 +65,30 @@ export const TitleContainer = styled.div`
 
     font-size: 1.25rem;
   }
+
+  @media screen and (max-width: 1200px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
 `
 
 export const DescriptionContainer = styled.div`
   display: grid;
-  grid-template-columns: 14.45rem 18.375rem;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.625rem 1.25rem;
 
   height: 5.25rem;
-  max-width: 35.3rem;
 
-  @media screen and (max-width: 425px) {
+  font-size: 0.875rem;
+
+  @media screen and (max-width: 1200px) {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 
     height: 12rem;
   }
