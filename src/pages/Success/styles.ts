@@ -8,6 +8,13 @@ export const SuccessContainer = styled.div`
   gap: 1.75rem;
 
   width: 100%;
+  max-width: 70rem;
+
+  margin-top: 10rem;
+
+  @media screen and (max-width: 1100px) {
+    margin-top: 5rem;
+  }
 `
 
 export const SuccessTitleContainer = styled.div`
@@ -38,6 +45,19 @@ export const SuccessContentContainer = styled.div`
   justify-content: space-between;
 
   width: 100%;
+
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+
+    gap: 1rem;
+
+    div {
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
 `
 
 export const SuccessContentBorder = styled.div`
@@ -54,8 +74,9 @@ export const SuccessContentBorder = styled.div`
 
   padding: 1px;
 
-  height: 16.875rem + 1px;
-  width: 32.875rem + 1px;
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+  }
 `
 
 export const SuccessPanelContainer = styled.div`
@@ -70,8 +91,9 @@ export const SuccessPanelContainer = styled.div`
   border-radius: 6px 36px;
   background-color: ${({ theme }) => theme.white};
 
-  height: 16.875rem;
-  width: 32.875rem;
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+  }
 `
 
 export const SuccessPanelRow = styled.div`

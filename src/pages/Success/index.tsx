@@ -35,9 +35,11 @@ export function Success() {
         <SuccessContentBorder>
           <SuccessPanelContainer>
             <SuccessPanelRow>
-              <AddressButton>
-                <MapPin size={16} weight="fill" />
-              </AddressButton>
+              <div>
+                <AddressButton>
+                  <MapPin size={16} weight="fill" />
+                </AddressButton>
+              </div>
 
               <RowText>
                 <p>
@@ -78,10 +80,12 @@ export function Success() {
           </SuccessPanelContainer>
         </SuccessContentBorder>
 
-        <img
-          src={successImg}
-          alt="Um desenho de um homem montado em uma moto indo entregar o pedido"
-        />
+        <div>
+          <img
+            src={successImg}
+            alt="Um desenho de um homem montado em uma moto indo entregar o pedido"
+          />
+        </div>
       </SuccessContentContainer>
     </SuccessContainer>
   )
