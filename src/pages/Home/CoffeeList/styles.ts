@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
 export const CoffeeListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10rem;
   margin-top: 2rem;
+
+  width: 100%;
 
   .listTitle {
     font-family: 'Baloo 2';
@@ -13,17 +17,8 @@ export const CoffeeListContainer = styled.div`
 
 export const ListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 2.5rem 2rem;
 
   margin-top: 3.375rem;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 1.5rem;
-  }
-
-  @media screen and (max-width: 425px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
 `

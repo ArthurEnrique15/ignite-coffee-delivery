@@ -7,8 +7,8 @@ export const LayoutContainer = styled.div`
   flex-direction: column;
   padding: 0 10rem;
 
-  @media screen and (max-width: 768px) {
-    padding: 0 2rem;
+  @media screen and (max-width: 900px) {
+    padding: 0 1rem;
 
     html {
       font-size: 87.5%;

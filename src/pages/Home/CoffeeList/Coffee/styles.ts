@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CoffeeContainer = styled.div`
-  width: 16rem;
+  width: 100%;
   height: 19.375rem;
 
   background-color: ${({ theme }) => theme['base-card']};
@@ -11,6 +11,7 @@ export const CoffeeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   text-align: center;
 
   padding: 0 1.25rem;

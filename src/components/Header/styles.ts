@@ -16,7 +16,7 @@ export const HeaderContainer = styled.header`
 
   background-color: ${({ theme }) => theme.white};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     gap: 1rem;
     padding: 0.75rem 1rem;
   }
