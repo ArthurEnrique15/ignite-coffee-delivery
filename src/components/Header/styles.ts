@@ -2,13 +2,24 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
 
   width: 100%;
-  height: 6.5rem;
 
-  padding: 2rem 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  padding: 1rem 10rem;
+
+  background-color: ${({ theme }) => theme.white};
+
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
 `
 
 export const HeaderButtonsContainer = styled.div`
@@ -17,11 +28,9 @@ export const HeaderButtonsContainer = styled.div`
   align-items: center;
 
   gap: 0.75rem;
-  height: 2.375rem;
 `
 
-export const LocationButton = styled.button`
-  border: 0px;
+export const LocationContainer = styled.div`
   border-radius: 6px;
   padding: 0.5rem;
 
@@ -30,6 +39,10 @@ export const LocationButton = styled.button`
 
   gap: 0.25rem;
 
+  svg {
+    min-width: 1rem;
+  }
+
   span {
     color: ${(props) => props.theme['purple-dark']};
   }
@@ -37,8 +50,10 @@ export const LocationButton = styled.button`
   color: ${(props) => props.theme.purple};
   background-color: ${(props) => props.theme['purple-light']};
 
-  @media screen and (max-width: 375px) {
-    font-size: 0.5rem;
+  @media screen and (max-width: 425px) {
+    span {
+      display: none;
+    }
   }
 `
 

@@ -3,7 +3,7 @@ import { ShoppingCart, MapPin } from 'phosphor-react'
 import {
   HeaderContainer,
   ItemsAmount,
-  LocationButton,
+  LocationContainer,
   ShopCartButton,
   HeaderButtonsContainer,
 } from './styles'
@@ -19,15 +19,15 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <NavLink to="/" title="Timer">
+      <NavLink to="/">
         <img src={logo} alt="" />
       </NavLink>
       <HeaderButtonsContainer>
-        <LocationButton>
+        <LocationContainer>
           <MapPin size={22} weight="fill" />
           <span>Belo Horizonte, MG</span>
-        </LocationButton>
-        <NavLink to="/checkout" title="Timer">
+        </LocationContainer>
+        <NavLink to="/checkout">
           <ShopCartButton>
             {itemsCount > 0 ? <ItemsAmount>{itemsCount}</ItemsAmount> : ''}
             <ShoppingCart size={22} weight="fill" />
